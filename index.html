@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's For Dinner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== header ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">&#127860;</div>
+        <div>
+          <h1>What's For Dinner</h1>
+          <p>Your daily meal inspiration</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#">Saved Recipes</a>
+        <a href="#">Recent</a>
+        <a href="#">Settings</a>
+        <a href="#" class="profile">
+          <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Profile">
+          <span>Profile</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== recipe card ===== -->
+  <main class="container">
+    <article id="recipeCard" class="recipe-card">
+
+      <div class="recipe-image">
+        <img id="recipeImage" src="" alt="">
+        <div id="imageFallback" class="image-fallback"></div>
+        <span class="rating">&#9733; <span id="recipeRating"></span> (<span id="recipeReviews"></span> reviews)</span>
+      </div>
+
+      <div class="recipe-body">
+        <h3 id="recipeName"></h3>
+        <p id="recipeDescription" class="description"></p>
+
+        <div class="info">
+          <div class="info-box">
+            <span class="label">Prep Time</span>
+            <span id="prepTime" class="value"></span>
+          </div>
+          <div class="info-box">
+            <span class="label">Cook Time</span>
+            <span id="cookTime" class="value"></span>
+          </div>
+          <div class="info-box">
+            <span class="label">Servings</span>
+            <span id="servings" class="value"></span>
+          </div>
+          <div class="info-box">
+            <span id="difficulty" class="badge"></span>
+            <span id="cuisine" class="value"></span>
+          </div>
+        </div>
+
+        <!-- only shows when prep + cook is more than 45 minutes -->
+        <div id="timeWarning" class="warning">
+          <strong>&#9888; Extended Preparation Time</strong>
+          <p>This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
+        </div>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="ingredients">Ingredients</button>
+          <button class="tab" data-tab="instructions">Instructions</button>
+          <button class="tab" data-tab="nutrition">Nutrition</button>
+          <button class="tab" data-tab="tips">Chef's Tips</button>
+        </div>
+
+        <div id="ingredients" class="tab-panel active">
+          <ul id="ingredientsList" class="ingredients"></ul>
+        </div>
+
+        <div id="instructions" class="tab-panel">
+          <ol id="instructionsList" class="instructions"></ol>
+        </div>
+
+        <div id="nutrition" class="tab-panel">
+          <div id="nutritionGrid" class="nutrition"></div>
+        </div>
+
+        <div id="tips" class="tab-panel">
+          <p id="chefTip" class="tip"></p>
+        </div>
+
+        <button id="tryAnotherBtn" class="try-btn">&#8635; Try Another Recipe</button>
+      </div>
+
+    </article>
+  </main>
+
+  <script src="js/meals.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
